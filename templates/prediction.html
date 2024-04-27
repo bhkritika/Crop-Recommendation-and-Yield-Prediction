@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Yield Prediction</title>
+    <link rel="stylesheet" href="/static/predict.css">
+    <style>
+        .select-wrapper select::-ms-expand {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommendation">Crop Recommendation</a></li>
+            <li><a href="/prediction">Yield Prediction</a></li>
+        </ul>
+    </nav>
+    <h1>Crop Yield Prediction</h1>
+    <div class="form-container">
+        <form action="/predict" method="post">
+            <label for="state_name">State Name:
+            <input type="text" id="state_name" name="state_name" required placeholder="Enter State Name">
+            </label>
+            <label for="district_name">District Name:
+            <input type="text" id="district_name" name="district_name" required placeholder="Enter District Name">
+            </label>
+            <label for="crop_year">Crop Year:
+            <input type="number" id="crop_year" name="crop_year" min="1900" max="2100" required placeholder="Enter Crop Year">
+            </label>
+            <label for="season_name">Season Name:</label>
+<select id="season_name" name="season_name" required>
+    <option value="" disabled selected hidden>Enter Season Name</option>
+    <option value="Kharif">Kharif</option>
+    <option value="Whole year">Whole year</option>
+    <option value="Autumn">Autumn</option>
+    <option value="Rabi">Rabi</option>
+    <option value="Summer">Summer</option>
+    <option value="Winter">Winter</option>
+</select><br>
+
+            <label for="crop_name">Crop Name:
+            <input type="text" id="crop_name" name="crop_name" required placeholder="Enter Crop Name">
+            </label>
+            <label for="area">Area (in hectares):
+            <input type="number" id="area" name="area" min="0" step="0.01" required placeholder="Enter Area">
+            </label>
+            <button class="button" type="submit" style="vertical-align:middle"><span>Predict Yield</span></button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('season_name').addEventListener('change', function() {
+            this.style.color = '#333';
+        });
+    </script>
+</body>
+</html>

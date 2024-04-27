@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommendation">Crop Recommendation</a></li>
+            <li><a href="/prediction">Yield Prediction</a></li>
+        </ul>
+    </nav>
+    <h1>Crop Recommendation</h1>
+    <div class="form-container">
+        <form action="/recommend" method="post">
+            <fieldset>
+                <legend>Add details </legend>
+                <div class="option-row">
+                    <label for="temperature">Temperature (°C):</label>
+                    <input type="number" id="temperature" name="temperature" min="-50" max="50" step="0.0001" placeholder="Enter Temperature" >
+                </div>
+                <div class="option-row">
+                    <label for="wind_speed">Wind Speed:</label>
+                    <input type="number" id="wind_speed" name="wind_speed" min="0" max="14" step="0.0001" placeholder="Enter Wind Speed">
+                </div>
+                <div class="option-row">
+                    <label for="precipitation">Precipitation:</label>
+                    <input type="number" id="precipitation" name="precipitation" min="0" step="0.0001" placeholder="Enter Precipitation">
+                </div>
+                <div class="option-row">
+                    <label for="humidity">Humidity (%):</label>
+                    <input type="number" id="humidity" name="humidity" min="0" max="100" step="0.000001" placeholder="Enter Humidity">
+                </div>
+                <div class="option-row">
+                    <label for="nitrogen">Nitrogen Level:</label>
+                    <input type="number" id="nitrogen" name="nitrogen" min="0" step="0.0001" required placeholder="Enter Nitrogen level">
+                </div>
+                <div class="option-row">
+                    <label for="phosphorus">Phosphorus Level:</label>
+                    <input type="number" id="phosphorus" name="phosphorus" min="0" step="0.0001" required placeholder="Enter Phosphorus level">
+                </div>
+                <div class="option-row">
+                    <label for="potassium">Potassium Level:</label>
+                    <input type="number" id="potassium" name="potassium" min="0" step="0.0001" placeholder="Enter Potassium level">
+                </div>
+                <div class="option-row">
+                    <label for="soil_type">Soil Type:</label>
+                    <select id="soil_type" name="soil_type">
+                        <option value="sandy">Sandy</option>
+                        <option value="clay">Clay</option>
+                        <option value="peaty">Peaty</option>
+                        <option value="chalky">Chalky</option>
+                        <option value="silt">Silt</option>
+                        <option value="loamy">Loamy</option>
+                    </select>
+                </div>
+            </fieldset>
+            <div class="button-container">
+                <button class="button recommendation-button" style="vertical-align:middle"><span>Get recommendation</span></button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

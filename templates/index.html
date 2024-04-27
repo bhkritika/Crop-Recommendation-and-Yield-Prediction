@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation and Yield Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommendation">Crop Recommendation</a></li>
+            <li><a href="/prediction">Yield Prediction</a></li>
+        </ul>
+    </nav>
+    <div class="option-container">
+        <h1>Crop Recommendation and Yield Prediction System</h1>
+        <div class="options-wrapper">
+            <a href="{{ url_for('recom') }}" class="option">
+                <img src="{{ url_for('static', filename='crop recom.jpg') }}" class="padded1" alt="Crop Recommendation Image" />
+                <h2>Crop Recommendation</h2>
+            </a>
+            <a href="{{ url_for('prediction') }}" class="option">
+                <img src="{{ url_for('static', filename='yieldp.jpg') }}" class="padded2" alt="Yield Prediction Image" />
+                <h2>Crop Yield Prediction</h2>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
